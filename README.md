@@ -18,8 +18,8 @@ jobs:
     - name: Create local changes
       run: |
         ...
-    - name: Push changes
-      uses: liziwl/github-push-action@master
+    - name: Push dir to Git
+      uses: liziwl/git-push-action@master
       with:
         git_token_holder: 'token_holder_username'
         git_token: '${{ secrets.GIT_TOKEN }}'
