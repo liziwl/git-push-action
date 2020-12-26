@@ -34,14 +34,14 @@ jobs:
 
 ### Inputs
 
-| name | value | default | description |
-| ---- | ----- | ------- | ----------- |
-| git_token_holder | string | | Token for the repo. Can be passed in using `${{ secrets.GITHUB_TOKEN }}`. |
-| git_token | string | | Destination branch to push changes. Can be passed in using `${{ github.ref }}`. |
-| repository_url | boolean | false | Determines if force push is used. |
-| push_dir | boolean | false | Determines if `--tags` is used. |
-| commit_user | string | '.' | Directory to change to before pushing. |
-| commit_email | string | '' | Repository name. Default or empty repository name represents current github repository. If you want to push to other repository, you should make a [personal access token](https://github.com/settings/tokens) and use it as the `github_token` input.  |
-| branch | string | '' | Repository name. Default or empty repository name represents current github repository. If you want to push to other repository, you should make a [personal access token](https://github.com/settings/tokens) and use it as the `github_token` input.  |
-| keep_history | string | '' | Repository name. Default or empty repository name represents current github repository. If you want to push to other repository, you should make a [personal access token](https://github.com/settings/tokens) and use it as the `github_token` input.  |
-| commit_message | string | '' | Repository name. Default or empty repository name represents current github repository. If you want to push to other repository, you should make a [personal access token](https://github.com/settings/tokens) and use it as the `github_token` input.  |
+| name | value | default | required | description |
+|-|-|-|-|-|
+| git_token_holder | string |  | Y | Username of token holder |
+| git_token | string |  | Y | Token for the destination repo. Can be passed in using $\{{ secrets.GIT_TOKEN }} |
+| repository_url | boolean |  | Y | Repository URL after "https://", like "github.com/USER_NAME/REPO_NAME.git" |
+| push_dir | string |  | Y | Directory to push |
+| commit_user | string |  | Y | User to commit |
+| commit_email | string |  | Y | Email of the user to commit |
+| branch | string | 'master' |  | Destination branch to push changes |
+| keep_history | boolean | false |  | Keep commit history |
+| commit_message | string | "Deploy ${{ github.sha }}" |  | Commit messgae |

@@ -25,8 +25,8 @@ inputs:
     required: true
   branch:
     description: 'Destination branch to push changes'
-    required: false
     default: 'master'
+    required: false
   keep_history:
     description: 'Keep commit history'
     default: false
