@@ -1,8 +1,8 @@
-name: 'Git Push'
+name: 'Push dir to Git'
 description: 'Pushing to Git repository local changes'
 author: 'liziwl'
 branding:
-  icon: git_push
+  icon: git-commit
   color: green
 inputs:
   git_token_holder:
