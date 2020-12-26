@@ -1,0 +1,41 @@
+name: 'Git Push'
+description: 'Pushing to Git repository local changes'
+author: 'liziwl'
+branding:
+  icon: git_push
+  color: green
+inputs:
+  git_token_holder:
+    description: 'Username of token holder'
+    required: true
+  git_token:
+    description: 'Token for the destination repo. Can be passed in using $\{{ secrets.GIT_TOKEN }}'
+    required: true
+  repository_url:
+    description: 'Repository URL after "https://", like "github.com/USER_NAME/REPO_NAME.git"'
+    required: true
+  push_dir:
+    description: 'Directory to push'
+    required: true
+  commit_user:
+    description: 'User to commit'
+    required: true
+  commit_email:
+    description: 'Email of the user to commit'
+    required: true
+  branch:
+    description: 'Destination branch to push changes'
+    required: false
+    default: 'master'
+  keep_history:
+    description: 'Keep commit history'
+    default: false
+    required: false
+  commit_message:
+    description: 'Commit messgae'
+    default: "Deploy ${{ github.sha }}"
+    required: false
+
+runs:
+  using: 'node12'
+  main: 'start.js'
