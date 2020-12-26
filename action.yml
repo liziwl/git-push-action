@@ -33,7 +33,6 @@ inputs:
     required: false
   commit_message:
     description: 'Commit messgae'
-    default: "Deploy ${{ github.sha }}"
     required: false
 
 runs:

@@ -35,8 +35,8 @@ git config --global user.name ${INPUT_COMMIT_USER}
 
 commit_msg="${INPUT_COMMIT_MESSAGE}"
 [ -z "${commit_msg}" ] && {
-    commit_msg="Deploy sha"
-    # commit_msg="Deploy ${{ github.sha }}"
+    sha=$(git rev-parse --short HEAD)
+    commit_msg="Deploy ${sha}"
 };
 
 remote_repo="https://${INPUT_GIT_TOKEN_HOLDER}:${INPUT_GIT_TOKEN}@${INPUT_REPOSITORY_URL}"

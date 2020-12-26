@@ -22,4 +22,4 @@ jobs:
         repository_url: 'e.coding.net/liziwl/liziwl-page/test_push.git'
         # keep_history: false # default false
         # branch: master # default master
-        commit_message: 'Psuh by action bot' # default "Deploy ${{ github.sha }}"
+        # commit_message: 'Psuh by action bot' # default "Deploy COMMIT_SHA"
