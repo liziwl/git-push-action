@@ -8,18 +8,18 @@ jobs:
 
     - name: Change Code
       run: |
-        echo $(date) >> test/Gettysburg_Address.txt
+        echo -e "\n$(date)" >> test/Gettysburg_Address.txt
     
     - name: Verify action syntax
       # The action should not publish any real changes, but should succeed.
       uses: './'
       with:
-        git_token_holder: 'ptqqb7wlymwu'
-        git_token: '${{ secrets.GIT_TOKEN }}'
+        git_token_holder: 'liziwl'
+        git_token: '${{ secrets.BIT_TOKEN }}'
         commit_user: 'liziwl'
         commit_email: 'leezisy@gmail.com'
         push_dir: 'test/'
-        repository_url: 'e.coding.net/liziwl/liziwl-page/test_push.git'
+        repository_url: 'bitbucket.org/liziwl/push-action-demo.git'
         # keep_history: false # default false
         # branch: master # default master
         # commit_message: 'Psuh by action bot' # default "Deploy COMMIT_SHA"

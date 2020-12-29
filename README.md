@@ -26,19 +26,23 @@ jobs:
         commit_user: 'commit_username'
         commit_email: 'commit_email'
         push_dir: 'a_dir'
-        repository_url: 'Repository https clone URL after "https://"'
+        repository_url: 'Repository https clone URL after "https://xxxx@"'
         # keep_history: false # default false, not keep history
         # branch: master # default master
         # commit_message: 'Psuh by action bot' # default "Deploy ${{ github.sha }}"
 ```
 
-### Inputs
+### A detailed GitHub workflow file can be checked [**here (clickable)**](.github/workflows/test.yml).
+### Also, sample destination repository can be checked [**here (clickable)**](https://bitbucket.org/liziwl/push-action-demo).
+
+
+## Inputs
 
 | name | value | default | required | description |
 |-|-|-|-|-|
 | git_token_holder | string |  | Y | Username of token holder |
 | git_token | string |  | Y | Token for the destination repo. Can be passed in using $\{{ secrets.GIT_TOKEN }} |
-| repository_url | boolean |  | Y | Repository URL after "https://", like "github.com/USER_NAME/REPO_NAME.git" |
+| repository_url | boolean |  | Y | Repository URL after "https://xxxx@", like "github.com/USER_NAME/REPO_NAME.git" |
 | push_dir | string |  | Y | Directory to push |
 | commit_user | string |  | Y | User to commit |
 | commit_email | string |  | Y | Email of the user to commit |
