@@ -47,5 +47,5 @@ jobs:
 | commit_user | string |  | Y | User to commit |
 | commit_email | string |  | Y | Email of the user to commit |
 | branch | string | 'master' |  | Destination branch to push changes |
-| keep_history | boolean | false |  | Keep commit history |
-| commit_message | string | "Deploy ${{ github.sha }}" |  | Commit messgae |
+| keep_history | boolean | false |  | Keep destination commit history |
+| commit_message | string | "Deploy ${{ github.sha }}" |  | Destination Commit messgae |
