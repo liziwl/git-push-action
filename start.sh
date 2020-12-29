@@ -43,7 +43,14 @@ remote_repo="https://${INPUT_GIT_TOKEN_HOLDER}:${INPUT_GIT_TOKEN}@${INPUT_REPOSI
 
 tmp_path="/tmp/git_push$RANDOM"
 mkdir -p $tmp_path
-cp -r "${INPUT_PUSH_DIR}" $tmp_path
+
+if [[ $INPUT_PUSH_DIR =~ /$ ]]; then
+    src_path=${INPUT_PUSH_DIR}"."
+else
+    src_path=${INPUT_PUSH_DIR}"/."
+fi
+
+cp -a -r "${src_path}" $tmp_path
 cd $tmp_path
 
 KEEP_HISTORY=${INPUT_KEEP_HISTORY:-false}
